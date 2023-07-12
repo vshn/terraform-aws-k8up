@@ -5,7 +5,7 @@ stages:
 
 default:
   image:
-    name: hashicorp/terraform:1.5.2
+    name: hashicorp/terraform:1.5.3
     entrypoint: [""]
   before_script:
     - terraform init -backend=false
