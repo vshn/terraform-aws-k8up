@@ -1,21 +1,4 @@
----
-stages:
-  - validate
-  - format
-
-default:
-  image:
-    name: hashicorp/terraform:1.8.5
-    entrypoint: [""]
-  before_script:
-    - terraform init -backend=false
-
-validate:
-  stage: validate
-  script:
-    - terraform validate
-
-format:
-  stage: format
-  script:
-    - terraform fmt -check -recursive -diff
+include:
+  - project: appuio-managed-kubernetes-services/gitlab-ci-templates
+    file: terraform-modules.yml
+    ref: main
